@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindCheck Clinical Pro</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<canvas id="bgCanvas"></canvas>
+
+<div class="container">
+
+<!-- LOGIN -->
+<div id="login" class="card">
+<h2>MindCheck Clinical</h2>
+<input type="text" id="username" placeholder="Username">
+<input type="password" id="password" placeholder="Password">
+<button onclick="startScreening()">Start Assessment</button>
+</div>
+
+<!-- SCREENING -->
+<div id="screening" class="card hidden">
+<h3>20 Question Screening</h3>
+<div id="screeningQuestions"></div>
+<button onclick="analyzeScreening()">Continue</button>
+<canvas id="screeningChart"></canvas>
+</div>
+
+<!-- DETAILED -->
+<div id="detailed" class="card hidden">
+<h3 id="dTitle"></h3>
+<div id="detailedQuestions"></div>
+<button onclick="generateReport()">Generate Report</button>
+</div>
+
+<!-- REPORT -->
+<div id="report" class="card hidden">
+<h2>Clinical Report</h2>
+<h3 id="result"></h3>
+<h4 id="severity"></h4>
+
+<canvas id="radarChart"></canvas>
+
+<div id="recommendations"></div>
+
+<select id="budget">
+<option value="">Select Budget</option>
+<option value="low">Low Budget</option>
+<option value="high">Premium</option>
+</select>
+
+<button onclick="findDoctor()">Find Doctor</button>
+<button onclick="findHospital()">Nearby Hospital</button>
+
+</div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
